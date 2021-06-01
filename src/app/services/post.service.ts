@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class PostService {
-  private url = 'https://jsonplaceholder.typicode.com/posts?usersId=1';
+  private url = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private httpClient:HttpClient) {
   }
@@ -16,5 +16,9 @@ export class PostService {
 
     return this.httpClient.get<Post[]>(this.url)
 
+  }
+
+  getSinglePost(id:number):Observable<Post> {
+    return this.httpClient.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`)
   }
 }

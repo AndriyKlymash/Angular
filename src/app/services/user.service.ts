@@ -16,4 +16,8 @@ export class UserService {
   getUsers():Observable<User[]> {
     return this.httpClient.get<User[]>(this.url)
   }
+
+  getSingleUser(id:number):Observable<User> {
+    return this.httpClient.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`)
+  }
 }
