@@ -1,0 +1,5 @@
+.wrapPost{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
