@@ -1,0 +1,7 @@
+<form #myForm='ngForm' (ngSubmit)="submit(myForm)">
+  <div><input #lgn='ngModel' required="" type="text" name="login" [(ngModel)]="user.login"></div>
+  <div *ngIf="!lgn.valid">login not valid</div>
+  <div><input #psw='ngModel' required="" type="text" name="password" [(ngModel)]="user.password"></div>
+  <div *ngIf="!psw.valid">password not valid</div>
+  <button [disabled]="!myForm.valid" [class.error]="!myForm.valid">Save</button>
+</form>

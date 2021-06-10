@@ -1,0 +1,17 @@
+<form [formGroup]="myFormGroup" (ngSubmit)="save()">
+  <div>
+    <label>login</label>
+    <input type="text" name="login" [formControl]="loginControl">
+    <div *ngIf="!loginControl.valid">
+      error
+      required lenght is - {{loginControl.errors?.minlenght?.requiredLenght}}
+      but actual lenght is - {{loginControl.errors?.minlenght?.actualLenght}}
+    </div>
+  </div>
+
+  <div>
+    <label>password</label>
+    <input type="text" name="password" [formControl]="passwordControl">
+  </div>
+  <button [disabled]="!myFormGroup.valid">save</button>
+</form>

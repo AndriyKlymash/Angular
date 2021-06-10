@@ -1,0 +1,6 @@
+<form [formGroup]="myForm" (ngSubmit)="save()">
+  <select [formControlName]="'id'">
+    <option [value]="user.id" *ngFor="let user of users">{{user.name}}</option>
+  </select>
+  <button>save</button>
+</form>
