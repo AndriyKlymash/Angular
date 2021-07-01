@@ -6,19 +6,30 @@
 //
 //выводите всех юзеров, под каждым юзером его посты (все разделяете на компоненты, делаете сервисы и интерфейсы)
 
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {UsersComponent} from './components/users/users.component';
+import {UserComponent} from './components/user/user.component';
+import {AppComponent} from "./app.component";
+import {HttpClientModule} from "@angular/common/http";
+import { PostsComponent } from './components/posts/posts.component';
+import { PostComponent } from './components/post/post.component';
 
 
 @NgModule({
   declarations: [
-
+    AppComponent,
+    UsersComponent,
+    UserComponent,
+    PostsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
-
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
