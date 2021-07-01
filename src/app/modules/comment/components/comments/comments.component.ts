@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DataTransferService} from "../../../../app-services/data-transfer.service";
+import {IUser} from "../../../user/models/IUser";
 
 @Component({
   selector: 'app-comments',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  constructor() { }
+  choosenUser:IUser
 
-  ngOnInit(): void {
+  constructor(private dataTransfer:DataTransferService) {
   }
 
+  ngOnInit(): void {
+    this.choosenUser= this.dataTransfer.store.getValue();
+  }
 }

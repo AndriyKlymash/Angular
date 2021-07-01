@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;">
+  <img
+    src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-2000w,f_auto,q_auto:best/newscms/2019_50/1515768/bart-simpson-today-main-191203-1515768.jpg"
+    class="card-img-top" alt="...">
+  <div class="card-body" *ngIf="userDetails">
+    <h5 class="card-title">{{userDetails.name}}</h5>
+    <p class="card-text">
+      {{userDetails.username}}
+      <br>
+      {{userDetails.email}}
+    </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<!--<p>{{userDetails.id}} - {{userDetails.name}} - {{userDetails.email}}</p>-->
